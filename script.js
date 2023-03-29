@@ -22,7 +22,7 @@ const ZODIAC_SIGNS = {
     }
 
 // Function to know the zodiac sign
-function getZodiacSign(day, month) {
+const getZodiacSign = (day, month) => {
 
     if(day > 31 || day < 1 || month > 12 || month < 1) return 'Invalid Birthday Day';
     for (const [key, value] of Object.entries(ZODIAC_SIGNS)) {
@@ -35,4 +35,14 @@ function getZodiacSign(day, month) {
 }
 
 
-// 2- Horoscope
+// Horoscope
+const HOROSCOPE = ['You will have some troubles in the day, but do not worry. Everything will worth it at the end of the day!', 'Take care of the people around you, someone will betreat you', 'You will have a great new today!'];
+
+// Function to get the horoscope
+const getHoroscope = (zodiacSign) => {
+    if (zodiacSign in ZODIAC_SIGNS) {
+        return HOROSCOPE[Math.floor(Math.random() * HOROSCOPE.length)];
+    } else {
+        return 'Invalid Zodiac Sign';
+    }
+}
